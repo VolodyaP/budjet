@@ -22,5 +22,23 @@ Vue.use(BootstrapVue);
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        max: 10000,
+        value: 2000,
+        money: 0
+    },
+
+    methods: {
+        add: function () {
+            this.value += parseInt(this.money);
+            this.money = 0;
+        },
+
+        subtract: function () {
+            this.value -= parseInt(this.money);
+            this.money = 0;
+        }
+
+    }
 });

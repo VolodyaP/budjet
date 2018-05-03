@@ -13,17 +13,27 @@
     </head>
     <body>
         <div id="app" class="container">
-            <div class="row" v-cloak>
-                <div class="col-md-5">
-                    <b-input-group size="lg" prepend="$" append=".00">
-                        <b-form-input></b-form-input>
-                    </b-input-group>
+            <div class="content" v-cloak>
+                <div class="row">
+                    <template>
+                        <div class="col-md-12">
+                            <h5>Summ: @{{ max }}</h5>
+                            <b-progress :value="value" :max="max" show-value class="mb-3"></b-progress>
+                        </div>
+                    </template>
                 </div>
 
-                <div class="col-md-6">
-                    <b-button variant="success"> + </b-button>
+                <div class="row">
+                    <div class="col-md-5">
+                        <b-input-group size="lg" prepend="$" append=".00">
+                            <b-form-input v-model="money"></b-form-input>
+                        </b-input-group>
+                    </div>
 
-                    <b-button variant="danger"> - </b-button>
+                    <div class="col-md-6" style="padding: 7px;">
+                        <b-button variant="success" @click="add"> + </b-button>
+                        <b-button variant="danger"  @click="subtract"> - </b-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,4 +41,5 @@
     </body>
 
     <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
+
 </html>
