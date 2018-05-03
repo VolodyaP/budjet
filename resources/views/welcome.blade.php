@@ -12,8 +12,20 @@
         <link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="container">
+            <div class="row" v-cloak>
+                <div class="col-md-5">
+                    <b-input-group size="lg" prepend="$" append=".00">
+                        <b-form-input></b-form-input>
+                    </b-input-group>
+                </div>
 
+                <div class="col-md-6">
+                    <b-button variant="success"> + </b-button>
+
+                    <b-button variant="danger"> - </b-button>
+                </div>
+            </div>
         </div>
 
     </body>
