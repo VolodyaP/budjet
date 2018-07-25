@@ -27,14 +27,16 @@
  
    export default {
  
+       props: [
+       'max',
+       'value'
+       ],
        mounted() {
             alert('Task Component is Loaded');
        },
 
       data: function () {
         return {
-          max: 10000,
-          value: 2000,
           money: 0
         }
       },

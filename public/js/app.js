@@ -64025,6 +64025,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
+
+  props: ['max', 'value'],
   mounted: function mounted() {
     alert('Task Component is Loaded');
   },
@@ -64032,8 +64034,6 @@ exports.default = {
 
   data: function data() {
     return {
-      max: 10000,
-      value: 2000,
       money: 0
     };
   },
