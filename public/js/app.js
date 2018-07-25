@@ -19944,7 +19944,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(74);
-module.exports = __webpack_require__(219);
+module.exports = __webpack_require__(222);
 
 
 /***/ }),
@@ -19971,27 +19971,10 @@ window.Vue = __webpack_require__(213);
 
 Vue.use(_bootstrapVue2.default);
 Vue.component('example-component', __webpack_require__(216));
+Vue.component('task', __webpack_require__(219));
 
 var app = new Vue({
-    el: '#app',
-    data: {
-        max: 10000,
-        value: 2000,
-        money: 0
-    },
-
-    methods: {
-        add: function add() {
-            this.value += parseInt(this.money);
-            this.money = 0;
-        },
-
-        subtract: function subtract() {
-            this.value -= parseInt(this.money);
-            this.money = 0;
-        }
-
-    }
+  el: '#app'
 });
 
 /***/ }),
@@ -63951,7 +63934,7 @@ var __vue_script__, __vue_template__
 var __vue_styles__ = {}
 __vue_script__ = __webpack_require__(217)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] resources/assets/js/components/ExampleComponent.vue: named exports in *.vue files are ignored.")}
+  console.warn("[vue-loader] resources\\assets\\js\\components\\ExampleComponent.vue: named exports in *.vue files are ignored.")}
 __vue_template__ = __webpack_require__(218)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
@@ -63968,7 +63951,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-64bc21ca/ExampleComponent.vue"
+  var id = "_v-19cbe540/ExampleComponent.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -64000,6 +63983,84 @@ module.exports = "\n<div class=\"container\">\n    <div class=\"row justify-cont
 
 /***/ }),
 /* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__vue_script__ = __webpack_require__(220)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] resources\\assets\\js\\components\\Task.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(221)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-79f85eb2/Task.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  mounted: function mounted() {
+    alert('Task Component is Loaded');
+  },
+
+
+  data: function data() {
+    return {
+      max: 10000,
+      value: 2000,
+      money: 0
+    };
+  },
+
+  methods: {
+    add: function add() {
+      this.value += parseInt(this.money);
+      this.money = 0;
+    },
+
+    subtract: function subtract() {
+      this.value -= parseInt(this.money);
+      this.money = 0;
+    }
+
+  }
+
+};
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"content\" v-cloak>\n     <div class=\"row\">\n         <template>\n             <div class=\"col-md-12\">\n                 <h5>Summ: @{{ max }}</h5>\n                 <b-progress :value=\"value\" :max=\"max\" show-value class=\"mb-3\"></b-progress>\n             </div>\n         </template>\n     </div>\n\n     <div class=\"row\">\n         <div class=\"col-md-5\">\n             <b-input-group size=\"lg\" prepend=\"$\" append=\".00\">\n                 <b-form-input v-model=\"money\"></b-form-input>\n             </b-input-group>\n         </div>\n\n         <div class=\"col-md-6\" style=\"padding: 7px;\">\n             <b-button variant=\"success\" @click=\"add\"> + </b-button>\n             <b-button variant=\"danger\"  @click=\"subtract\"> - </b-button>\n         </div>\n     </div>\n </div>\n";
+
+/***/ }),
+/* 222 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
